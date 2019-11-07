@@ -1,0 +1,29 @@
+package com.aspl.org.service;
+
+import java.util.List;
+
+import com.aspl.org.dto.GoodReceiptNoteItemDetailsDTO;
+import com.aspl.org.entity.GoodReceiptNoteItemDetails;
+
+public interface GoodReceiptNoteItemDetailsService {
+
+	List<GoodReceiptNoteItemDetailsDTO> getAllGoodReceiptNoteItemDetails();
+	GoodReceiptNoteItemDetailsDTO getGoodReceiptNoteItemDetailsByDetailsId(Integer detaislId);
+	List<GoodReceiptNoteItemDetailsDTO> getGoodReceiptNoteItemDetailsByGrnHeaderId(Integer grnHeaderId);
+	List<GoodReceiptNoteItemDetailsDTO> getGoodsReceiptNumberByItemId(Integer itemId);
+	
+	GoodReceiptNoteItemDetails saveGoodReceiptNoteItemDetailsDTO(GoodReceiptNoteItemDetailsDTO goodReceiptNoteItemDetailsDTO);
+	GoodReceiptNoteItemDetails updateGoodReceiptNoteItemDetailsDTO(GoodReceiptNoteItemDetailsDTO goodReceiptNoteItemDetailsDTO);
+	
+	void deleteGoodReceiptNoteItemDetails(Integer detailsId);
+	
+	GoodReceiptNoteItemDetailsDTO prepareGoodReceiptNoteItemDetailsDTO(GoodReceiptNoteItemDetails goodReceiptNoteItemDetails);
+	GoodReceiptNoteItemDetails prepareGoodReceiptNoteItemDetails(GoodReceiptNoteItemDetailsDTO goodReceiptNoteItemDetailsDTO);
+	List<GoodReceiptNoteItemDetailsDTO> getAuthorizedGoodReceiptNoteItemDetailsByGrnHeaderId(Integer grnHeaderId);
+	List<GoodReceiptNoteItemDetailsDTO> getUnAuthorizedGoodReceiptNoteItemDetailsByGrnHeaderId(Integer grnHeaderId);
+	List<GoodReceiptNoteItemDetailsDTO> getGoodReceiptNoteItemDetailsByGrnHeaderIdAndQcStatus(Integer grnHeaderId,
+			Integer qcAccept);
+	List<GoodReceiptNoteItemDetailsDTO> getGoodReceiptNoteItemDetailsByGrnHeaderIdAndQcStatusAccepted(
+			Integer grnHeaderId, Integer qcAccept);
+	
+}
